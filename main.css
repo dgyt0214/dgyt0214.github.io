@@ -236,3 +236,24 @@ transform: translate(-50%, -50%);
 #daily {
   height: 100%;
 }
+@media (max-width: 600px) {
+  .sticky-box-1 h2 {
+    margin-left: 20px;
+  }
+
+  .sticky-box-1 p {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  #box {
+    width: 80%; /* Adjust to the desired width */
+    margin-left: 10%;
+  }
+
+  .container {
+    margin-left: 0;
+    width: 90vmin;
+    margin-top: 20%;
+  }
+}

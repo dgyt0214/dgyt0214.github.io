@@ -21,8 +21,9 @@ $("#menu-toggle").click(function(e) {
   const btn = document.querySelector('#div1');
   btn.addEventListener('click', (e) => {
       btn.setAttribute('class', btn.getAttribute("class") === "active" ? "" : "active");
-  
-      // Redirect to another page
-      window.location.href = '/buymeacoffe.html';
-  });
-  
+          setTimeout(() => {
+        window.location.href = 'buymeacoffe.html';
+    }, 2000); // 2000 milliseconds = 2 seconds
+});
+
+

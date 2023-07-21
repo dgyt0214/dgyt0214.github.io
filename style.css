@@ -39,6 +39,7 @@
     position: -webkit-sticky;
     position: sticky;
     height: 100%;
+    width: 100%;
     background: url(/img/fc31f6e9827260ae401a63ceb3049b93.png);
     background-repeat: no-repeat;
     top: 0px;

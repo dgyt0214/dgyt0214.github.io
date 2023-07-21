@@ -18,12 +18,21 @@ $("#menu-toggle").click(function(e) {
     }
   });
   
-  const btn = document.querySelector('#div1');
-  btn.addEventListener('click', (e) => {
-      btn.setAttribute('class', btn.getAttribute("class") === "active" ? "" : "active");
-          setTimeout(() => {
-        window.location.href = 'buymeacoffe.html';
-    }, 2000); // 2000 milliseconds = 2 seconds
+const btn = document.querySelector('#div1');
+const loadingOverlay = document.getElementById('loadingOverlay');
+
+btn.addEventListener('click', (e) => {
+  btn.setAttribute('class', btn.getAttribute("class") === "active" ? "" : "active");
+
+  loadingOverlay.style.display = 'block';
+
+  setTimeout(() => {
+    window.location.href = '/buymeacoffe.html';
+  }, 2000); 
 });
 
+
+window.onload = () => {
+  loadingOverlay.style.display = 'none';
+};
 

@@ -1,0 +1,141 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bg-animation 5s infinite;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes bg-animation {
+    0% { background: #000; }
+    50% { background: #6F4E37; }
+    100% { background: #000; }
+}
+
+.center-container {
+    text-align: center;
+}
+
+.coffee-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #6F4E37; /* Coffee Brown */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.coffee-button__text {
+    position: relative;
+    z-index: 2;
+    margin-left: 10px; /* Add some space between the icon and the text */
+}
+
+.coffee-icon {
+    font-size: 20px;
+    animation: coffee-jump 0.5s infinite; /* Add a jumping animation to the coffee icon */
+}
+
+@keyframes coffee-jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.coffee-button:hover {
+    color: #fff;
+    background-color: #8B4513; /* Darker Brown */
+}
+
+/* Header */
+
+#page-wrapper {
+    padding-top: 3.5em;
+}
+
+#header {
+    background: transparent;
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
+    cursor: default;
+    height: 3.5em;
+    left: 0;
+    line-height: 3.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+    #header h1 {
+        height: inherit;
+        left: 1.25em;
+        line-height: inherit;
+        margin: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    #header nav {
+        position: absolute;
+        right: 1em;
+        top: 0;
+    }
+
+        #header nav ul {
+            margin: 0;
+        }
+
+            #header nav ul li {
+                display: inline-block;
+                margin-left: 1em;
+            }
+
+                #header nav ul li a, #header nav ul li span {
+                    border: 0;
+                    color: whitesmoke;
+                    display: inline-block;
+                    height: inherit;
+                    line-height: inherit;
+                    outline: 0;
+                }
+
+                    #header nav ul li a.button, #header nav ul li span.button {
+                        height: 2em;
+                        line-height: 2em;
+                        padding: 0 1.25em;
+                    }
+
+                    #header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
+                        margin-right: 0.5em;
+                    }
+
+                #header nav ul li.active > a, #header nav ul li.active > span {
+                    color: #e44c65;
+                }
+
+                #header nav ul li > ul {
+                    display: none;
+                }
+
+body.landing #page-wrapper {
+    padding-top: 0;
+}
+
+body.landing #header {
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+}
+

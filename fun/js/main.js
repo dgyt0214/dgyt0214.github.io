@@ -21,15 +21,14 @@ function run() {
     animation_text()
 }
 
-function audio_play(i) {
-    if(i == "default") {
-        var audio = new Audio("audio/mp3lol.lol");
-        audio.play();
-    } else {
-        var audio = new Audio("audio/" + i);
-        audio.play();
-    }
+if(i == "default") {
+    var audio = new Audio("audio/mp3lol.mp3");
+    audio.play();
+} else {
+    var audio = new Audio("audio/" + i);
+    audio.play();
 }
+
 
 function animation() {
     $(".woodfish .click img").css("width", "150px");

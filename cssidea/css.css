@@ -1,7 +1,7 @@
 body {
     animation: backgroundChange 5s infinite;
     overflow: auto;
-    background: url(/cssidea/back.png);
+    background-color: whitesmoke;
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(0.5);

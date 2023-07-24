@@ -23,7 +23,7 @@ function run() {
 
 function audio_play(i) {
     if(i == "default") {
-        var audio = new Audio("fun/audio/default/honkai-herta-hudurin-kuru-kuru.mp3");
+        var audio = new Audio("fun/audio/mp3lol.lol");
         audio.play();
     } else {
         var audio = new Audio("audio/" + i);

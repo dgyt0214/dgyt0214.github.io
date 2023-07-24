@@ -23,7 +23,7 @@ function run() {
 
 function audio_play(i) {
     if(i == "default") {
-        var audio = new Audio("fun/audio/mp3lol.lol");
+        var audio = new Audio("audio/mp3lol.lol");
         audio.play();
     } else {
         var audio = new Audio("audio/" + i);
@@ -40,7 +40,7 @@ function animation() {
 
 function animation_text() {
     var randomNum_1 = randomNum(0,100000)
-    $(".woodfish").append("<div id=\"text_tips_" +randomNum_1+ "\" class=\"text_tips\">功德+1</div>");
+    $(".woodfish").append("<div id=\"text_tips_" +randomNum_1+ "\" class=\"text_tips\">圈圈+1</div>");
     setTimeout(() => {
         $(".woodfish .text_tips").css("margin-bottom", "300px");
     }, 5);

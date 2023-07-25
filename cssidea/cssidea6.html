@@ -1,0 +1,3709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D spiral number</title>
+    <style>
+        html, body {
+	 background-color: #000;
+	 overflow: hidden;
+}
+ .container {
+	 width: 80vw;
+	 position: relative;
+	 margin: 10vh auto;
+	 transform-style: preserve-3d;
+	 perspective: 1000px;
+	 display: flex;
+	 justify-content: space-between;
+}
+ .line {
+	 width: 20px;
+	 height: 80vh;
+	 flex: 0 1 auto;
+	 display: flex;
+	 flex-wrap: wrap;
+	 flex-direction: column;
+	 justify-content: space-between;
+	 transform-style: preserve-3d;
+	 perspective: 1000px;
+}
+ .line .number {
+	 position: relative;
+	 font-size: 16px;
+	 height: calc(80vh / 18);
+	 border-radius: 50%;
+	 transform-style: preserve-3d;
+	 perspective: 1000px;
+	 box-shadow: 0 0 5px 5px rgba(255, 248, 78, .1), inset 0 0 5px 5px rgba(255, 248, 78, .1);
+	 line-height: calc(80vh / 18);
+}
+ .line .number::before {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 text-align: center;
+	 color: #57ff5e;
+	 text-shadow: 0 0 40px #57ff5e;
+}
+ .line:nth-child(1) {
+	 transform: rotateX(0deg);
+}
+ .line:nth-child(1) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(1)::before {
+	 transform: rotateX(0deg);
+	 content: "2";
+}
+ .line:nth-child(1) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(2)::before {
+	 transform: rotateX(0deg);
+	 content: "6";
+}
+ .line:nth-child(1) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(3)::before {
+	 transform: rotateX(0deg);
+	 content: "5";
+}
+ .line:nth-child(1) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(4)::before {
+	 transform: rotateX(0deg);
+	 content: "1";
+}
+ .line:nth-child(1) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(5)::before {
+	 transform: rotateX(0deg);
+	 content: "9";
+}
+ .line:nth-child(1) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(6)::before {
+	 transform: rotateX(0deg);
+	 content: "7";
+}
+ .line:nth-child(1) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(7)::before {
+	 transform: rotateX(0deg);
+	 content: "3";
+}
+ .line:nth-child(1) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(8)::before {
+	 transform: rotateX(0deg);
+	 content: "7";
+}
+ .line:nth-child(1) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(9)::before {
+	 transform: rotateX(0deg);
+	 content: "8";
+}
+ .line:nth-child(1) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(10)::before {
+	 transform: rotateX(0deg);
+	 content: "5";
+}
+ .line:nth-child(1) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(11)::before {
+	 transform: rotateX(0deg);
+	 content: "7";
+}
+ .line:nth-child(1) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(1) .number:nth-child(12)::before {
+	 transform: rotateX(0deg);
+	 content: "5";
+}
+ .line:nth-child(2) {
+	 transform: rotateX(10deg);
+}
+ .line:nth-child(2) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(1)::before {
+	 transform: rotateX(-10deg);
+	 content: "8";
+}
+ .line:nth-child(2) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(2)::before {
+	 transform: rotateX(-10deg);
+	 content: "8";
+}
+ .line:nth-child(2) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(3)::before {
+	 transform: rotateX(-10deg);
+	 content: "4";
+}
+ .line:nth-child(2) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(4)::before {
+	 transform: rotateX(-10deg);
+	 content: "4";
+}
+ .line:nth-child(2) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(5)::before {
+	 transform: rotateX(-10deg);
+	 content: "9";
+}
+ .line:nth-child(2) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(6)::before {
+	 transform: rotateX(-10deg);
+	 content: "7";
+}
+ .line:nth-child(2) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(7)::before {
+	 transform: rotateX(-10deg);
+	 content: "7";
+}
+ .line:nth-child(2) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(8)::before {
+	 transform: rotateX(-10deg);
+	 content: "9";
+}
+ .line:nth-child(2) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(9)::before {
+	 transform: rotateX(-10deg);
+	 content: "7";
+}
+ .line:nth-child(2) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(10)::before {
+	 transform: rotateX(-10deg);
+	 content: "9";
+}
+ .line:nth-child(2) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(11)::before {
+	 transform: rotateX(-10deg);
+	 content: "9";
+}
+ .line:nth-child(2) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(2) .number:nth-child(12)::before {
+	 transform: rotateX(-10deg);
+	 content: "1";
+}
+ .line:nth-child(3) {
+	 transform: rotateX(20deg);
+}
+ .line:nth-child(3) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(1)::before {
+	 transform: rotateX(-20deg);
+	 content: "8";
+}
+ .line:nth-child(3) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(2)::before {
+	 transform: rotateX(-20deg);
+	 content: "4";
+}
+ .line:nth-child(3) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(3)::before {
+	 transform: rotateX(-20deg);
+	 content: "8";
+}
+ .line:nth-child(3) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(4)::before {
+	 transform: rotateX(-20deg);
+	 content: "3";
+}
+ .line:nth-child(3) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(5)::before {
+	 transform: rotateX(-20deg);
+	 content: "4";
+}
+ .line:nth-child(3) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(6)::before {
+	 transform: rotateX(-20deg);
+	 content: "3";
+}
+ .line:nth-child(3) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(7)::before {
+	 transform: rotateX(-20deg);
+	 content: "5";
+}
+ .line:nth-child(3) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(8)::before {
+	 transform: rotateX(-20deg);
+	 content: "5";
+}
+ .line:nth-child(3) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(9)::before {
+	 transform: rotateX(-20deg);
+	 content: "2";
+}
+ .line:nth-child(3) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(10)::before {
+	 transform: rotateX(-20deg);
+	 content: "5";
+}
+ .line:nth-child(3) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(11)::before {
+	 transform: rotateX(-20deg);
+	 content: "1";
+}
+ .line:nth-child(3) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(3) .number:nth-child(12)::before {
+	 transform: rotateX(-20deg);
+	 content: "1";
+}
+ .line:nth-child(4) {
+	 transform: rotateX(30deg);
+}
+ .line:nth-child(4) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(1)::before {
+	 transform: rotateX(-30deg);
+	 content: "4";
+}
+ .line:nth-child(4) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(2)::before {
+	 transform: rotateX(-30deg);
+	 content: "7";
+}
+ .line:nth-child(4) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(3)::before {
+	 transform: rotateX(-30deg);
+	 content: "1";
+}
+ .line:nth-child(4) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(4)::before {
+	 transform: rotateX(-30deg);
+	 content: "1";
+}
+ .line:nth-child(4) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(5)::before {
+	 transform: rotateX(-30deg);
+	 content: "6";
+}
+ .line:nth-child(4) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(6)::before {
+	 transform: rotateX(-30deg);
+	 content: "4";
+}
+ .line:nth-child(4) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(7)::before {
+	 transform: rotateX(-30deg);
+	 content: "9";
+}
+ .line:nth-child(4) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(8)::before {
+	 transform: rotateX(-30deg);
+	 content: "9";
+}
+ .line:nth-child(4) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(9)::before {
+	 transform: rotateX(-30deg);
+	 content: "6";
+}
+ .line:nth-child(4) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(10)::before {
+	 transform: rotateX(-30deg);
+	 content: "6";
+}
+ .line:nth-child(4) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(11)::before {
+	 transform: rotateX(-30deg);
+	 content: "9";
+}
+ .line:nth-child(4) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(4) .number:nth-child(12)::before {
+	 transform: rotateX(-30deg);
+	 content: "8";
+}
+ .line:nth-child(5) {
+	 transform: rotateX(40deg);
+}
+ .line:nth-child(5) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(1)::before {
+	 transform: rotateX(-40deg);
+	 content: "4";
+}
+ .line:nth-child(5) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(2)::before {
+	 transform: rotateX(-40deg);
+	 content: "6";
+}
+ .line:nth-child(5) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(3)::before {
+	 transform: rotateX(-40deg);
+	 content: "9";
+}
+ .line:nth-child(5) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(4)::before {
+	 transform: rotateX(-40deg);
+	 content: "2";
+}
+ .line:nth-child(5) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(5)::before {
+	 transform: rotateX(-40deg);
+	 content: "4";
+}
+ .line:nth-child(5) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(6)::before {
+	 transform: rotateX(-40deg);
+	 content: "3";
+}
+ .line:nth-child(5) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(7)::before {
+	 transform: rotateX(-40deg);
+	 content: "1";
+}
+ .line:nth-child(5) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(8)::before {
+	 transform: rotateX(-40deg);
+	 content: "5";
+}
+ .line:nth-child(5) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(9)::before {
+	 transform: rotateX(-40deg);
+	 content: "6";
+}
+ .line:nth-child(5) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(10)::before {
+	 transform: rotateX(-40deg);
+	 content: "2";
+}
+ .line:nth-child(5) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(11)::before {
+	 transform: rotateX(-40deg);
+	 content: "5";
+}
+ .line:nth-child(5) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(5) .number:nth-child(12)::before {
+	 transform: rotateX(-40deg);
+	 content: "4";
+}
+ .line:nth-child(6) {
+	 transform: rotateX(50deg);
+}
+ .line:nth-child(6) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(1)::before {
+	 transform: rotateX(-50deg);
+	 content: "4";
+}
+ .line:nth-child(6) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(2)::before {
+	 transform: rotateX(-50deg);
+	 content: "4";
+}
+ .line:nth-child(6) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(3)::before {
+	 transform: rotateX(-50deg);
+	 content: "9";
+}
+ .line:nth-child(6) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(4)::before {
+	 transform: rotateX(-50deg);
+	 content: "6";
+}
+ .line:nth-child(6) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(5)::before {
+	 transform: rotateX(-50deg);
+	 content: "4";
+}
+ .line:nth-child(6) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(6)::before {
+	 transform: rotateX(-50deg);
+	 content: "5";
+}
+ .line:nth-child(6) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(7)::before {
+	 transform: rotateX(-50deg);
+	 content: "2";
+}
+ .line:nth-child(6) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(8)::before {
+	 transform: rotateX(-50deg);
+	 content: "5";
+}
+ .line:nth-child(6) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(9)::before {
+	 transform: rotateX(-50deg);
+	 content: "4";
+}
+ .line:nth-child(6) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(10)::before {
+	 transform: rotateX(-50deg);
+	 content: "9";
+}
+ .line:nth-child(6) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(11)::before {
+	 transform: rotateX(-50deg);
+	 content: "6";
+}
+ .line:nth-child(6) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(6) .number:nth-child(12)::before {
+	 transform: rotateX(-50deg);
+	 content: "2";
+}
+ .line:nth-child(7) {
+	 transform: rotateX(60deg);
+}
+ .line:nth-child(7) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(1)::before {
+	 transform: rotateX(-60deg);
+	 content: "3";
+}
+ .line:nth-child(7) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(2)::before {
+	 transform: rotateX(-60deg);
+	 content: "6";
+}
+ .line:nth-child(7) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(3)::before {
+	 transform: rotateX(-60deg);
+	 content: "1";
+}
+ .line:nth-child(7) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(4)::before {
+	 transform: rotateX(-60deg);
+	 content: "5";
+}
+ .line:nth-child(7) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(5)::before {
+	 transform: rotateX(-60deg);
+	 content: "8";
+}
+ .line:nth-child(7) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(6)::before {
+	 transform: rotateX(-60deg);
+	 content: "5";
+}
+ .line:nth-child(7) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(7)::before {
+	 transform: rotateX(-60deg);
+	 content: "5";
+}
+ .line:nth-child(7) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(8)::before {
+	 transform: rotateX(-60deg);
+	 content: "5";
+}
+ .line:nth-child(7) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(9)::before {
+	 transform: rotateX(-60deg);
+	 content: "1";
+}
+ .line:nth-child(7) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(10)::before {
+	 transform: rotateX(-60deg);
+	 content: "2";
+}
+ .line:nth-child(7) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(11)::before {
+	 transform: rotateX(-60deg);
+	 content: "5";
+}
+ .line:nth-child(7) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(7) .number:nth-child(12)::before {
+	 transform: rotateX(-60deg);
+	 content: "3";
+}
+ .line:nth-child(8) {
+	 transform: rotateX(70deg);
+}
+ .line:nth-child(8) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(1)::before {
+	 transform: rotateX(-70deg);
+	 content: "8";
+}
+ .line:nth-child(8) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(2)::before {
+	 transform: rotateX(-70deg);
+	 content: "3";
+}
+ .line:nth-child(8) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(3)::before {
+	 transform: rotateX(-70deg);
+	 content: "5";
+}
+ .line:nth-child(8) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(4)::before {
+	 transform: rotateX(-70deg);
+	 content: "6";
+}
+ .line:nth-child(8) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(5)::before {
+	 transform: rotateX(-70deg);
+	 content: "5";
+}
+ .line:nth-child(8) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(6)::before {
+	 transform: rotateX(-70deg);
+	 content: "2";
+}
+ .line:nth-child(8) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(7)::before {
+	 transform: rotateX(-70deg);
+	 content: "7";
+}
+ .line:nth-child(8) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(8)::before {
+	 transform: rotateX(-70deg);
+	 content: "1";
+}
+ .line:nth-child(8) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(9)::before {
+	 transform: rotateX(-70deg);
+	 content: "6";
+}
+ .line:nth-child(8) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(10)::before {
+	 transform: rotateX(-70deg);
+	 content: "6";
+}
+ .line:nth-child(8) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(11)::before {
+	 transform: rotateX(-70deg);
+	 content: "1";
+}
+ .line:nth-child(8) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(8) .number:nth-child(12)::before {
+	 transform: rotateX(-70deg);
+	 content: "9";
+}
+ .line:nth-child(9) {
+	 transform: rotateX(80deg);
+}
+ .line:nth-child(9) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(1)::before {
+	 transform: rotateX(-80deg);
+	 content: "2";
+}
+ .line:nth-child(9) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(2)::before {
+	 transform: rotateX(-80deg);
+	 content: "3";
+}
+ .line:nth-child(9) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(3)::before {
+	 transform: rotateX(-80deg);
+	 content: "5";
+}
+ .line:nth-child(9) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(4)::before {
+	 transform: rotateX(-80deg);
+	 content: "3";
+}
+ .line:nth-child(9) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(5)::before {
+	 transform: rotateX(-80deg);
+	 content: "6";
+}
+ .line:nth-child(9) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(6)::before {
+	 transform: rotateX(-80deg);
+	 content: "1";
+}
+ .line:nth-child(9) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(7)::before {
+	 transform: rotateX(-80deg);
+	 content: "5";
+}
+ .line:nth-child(9) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(8)::before {
+	 transform: rotateX(-80deg);
+	 content: "5";
+}
+ .line:nth-child(9) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(9)::before {
+	 transform: rotateX(-80deg);
+	 content: "4";
+}
+ .line:nth-child(9) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(10)::before {
+	 transform: rotateX(-80deg);
+	 content: "3";
+}
+ .line:nth-child(9) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(11)::before {
+	 transform: rotateX(-80deg);
+	 content: "9";
+}
+ .line:nth-child(9) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(9) .number:nth-child(12)::before {
+	 transform: rotateX(-80deg);
+	 content: "4";
+}
+ .line:nth-child(10) {
+	 transform: rotateX(90deg);
+}
+ .line:nth-child(10) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(1)::before {
+	 transform: rotateX(-90deg);
+	 content: "6";
+}
+ .line:nth-child(10) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(2)::before {
+	 transform: rotateX(-90deg);
+	 content: "2";
+}
+ .line:nth-child(10) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(3)::before {
+	 transform: rotateX(-90deg);
+	 content: "2";
+}
+ .line:nth-child(10) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(4)::before {
+	 transform: rotateX(-90deg);
+	 content: "8";
+}
+ .line:nth-child(10) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(5)::before {
+	 transform: rotateX(-90deg);
+	 content: "2";
+}
+ .line:nth-child(10) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(6)::before {
+	 transform: rotateX(-90deg);
+	 content: "5";
+}
+ .line:nth-child(10) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(7)::before {
+	 transform: rotateX(-90deg);
+	 content: "2";
+}
+ .line:nth-child(10) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(8)::before {
+	 transform: rotateX(-90deg);
+	 content: "5";
+}
+ .line:nth-child(10) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(9)::before {
+	 transform: rotateX(-90deg);
+	 content: "8";
+}
+ .line:nth-child(10) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(10)::before {
+	 transform: rotateX(-90deg);
+	 content: "5";
+}
+ .line:nth-child(10) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(11)::before {
+	 transform: rotateX(-90deg);
+	 content: "9";
+}
+ .line:nth-child(10) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(10) .number:nth-child(12)::before {
+	 transform: rotateX(-90deg);
+	 content: "9";
+}
+ .line:nth-child(11) {
+	 transform: rotateX(100deg);
+}
+ .line:nth-child(11) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(1)::before {
+	 transform: rotateX(-100deg);
+	 content: "3";
+}
+ .line:nth-child(11) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(2)::before {
+	 transform: rotateX(-100deg);
+	 content: "6";
+}
+ .line:nth-child(11) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(3)::before {
+	 transform: rotateX(-100deg);
+	 content: "9";
+}
+ .line:nth-child(11) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(4)::before {
+	 transform: rotateX(-100deg);
+	 content: "3";
+}
+ .line:nth-child(11) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(5)::before {
+	 transform: rotateX(-100deg);
+	 content: "3";
+}
+ .line:nth-child(11) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(6)::before {
+	 transform: rotateX(-100deg);
+	 content: "1";
+}
+ .line:nth-child(11) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(7)::before {
+	 transform: rotateX(-100deg);
+	 content: "5";
+}
+ .line:nth-child(11) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(8)::before {
+	 transform: rotateX(-100deg);
+	 content: "8";
+}
+ .line:nth-child(11) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(9)::before {
+	 transform: rotateX(-100deg);
+	 content: "4";
+}
+ .line:nth-child(11) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(10)::before {
+	 transform: rotateX(-100deg);
+	 content: "6";
+}
+ .line:nth-child(11) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(11)::before {
+	 transform: rotateX(-100deg);
+	 content: "4";
+}
+ .line:nth-child(11) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(11) .number:nth-child(12)::before {
+	 transform: rotateX(-100deg);
+	 content: "8";
+}
+ .line:nth-child(12) {
+	 transform: rotateX(110deg);
+}
+ .line:nth-child(12) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(1)::before {
+	 transform: rotateX(-110deg);
+	 content: "9";
+}
+ .line:nth-child(12) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(2)::before {
+	 transform: rotateX(-110deg);
+	 content: "4";
+}
+ .line:nth-child(12) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(3)::before {
+	 transform: rotateX(-110deg);
+	 content: "2";
+}
+ .line:nth-child(12) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(4)::before {
+	 transform: rotateX(-110deg);
+	 content: "7";
+}
+ .line:nth-child(12) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(5)::before {
+	 transform: rotateX(-110deg);
+	 content: "7";
+}
+ .line:nth-child(12) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(6)::before {
+	 transform: rotateX(-110deg);
+	 content: "3";
+}
+ .line:nth-child(12) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(7)::before {
+	 transform: rotateX(-110deg);
+	 content: "7";
+}
+ .line:nth-child(12) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(8)::before {
+	 transform: rotateX(-110deg);
+	 content: "4";
+}
+ .line:nth-child(12) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(9)::before {
+	 transform: rotateX(-110deg);
+	 content: "6";
+}
+ .line:nth-child(12) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(10)::before {
+	 transform: rotateX(-110deg);
+	 content: "3";
+}
+ .line:nth-child(12) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(11)::before {
+	 transform: rotateX(-110deg);
+	 content: "1";
+}
+ .line:nth-child(12) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(12) .number:nth-child(12)::before {
+	 transform: rotateX(-110deg);
+	 content: "1";
+}
+ .line:nth-child(13) {
+	 transform: rotateX(120deg);
+}
+ .line:nth-child(13) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(1)::before {
+	 transform: rotateX(-120deg);
+	 content: "8";
+}
+ .line:nth-child(13) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(2)::before {
+	 transform: rotateX(-120deg);
+	 content: "4";
+}
+ .line:nth-child(13) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(3)::before {
+	 transform: rotateX(-120deg);
+	 content: "3";
+}
+ .line:nth-child(13) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(4)::before {
+	 transform: rotateX(-120deg);
+	 content: "5";
+}
+ .line:nth-child(13) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(5)::before {
+	 transform: rotateX(-120deg);
+	 content: "1";
+}
+ .line:nth-child(13) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(6)::before {
+	 transform: rotateX(-120deg);
+	 content: "9";
+}
+ .line:nth-child(13) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(7)::before {
+	 transform: rotateX(-120deg);
+	 content: "7";
+}
+ .line:nth-child(13) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(8)::before {
+	 transform: rotateX(-120deg);
+	 content: "4";
+}
+ .line:nth-child(13) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(9)::before {
+	 transform: rotateX(-120deg);
+	 content: "7";
+}
+ .line:nth-child(13) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(10)::before {
+	 transform: rotateX(-120deg);
+	 content: "1";
+}
+ .line:nth-child(13) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(11)::before {
+	 transform: rotateX(-120deg);
+	 content: "1";
+}
+ .line:nth-child(13) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(13) .number:nth-child(12)::before {
+	 transform: rotateX(-120deg);
+	 content: "5";
+}
+ .line:nth-child(14) {
+	 transform: rotateX(130deg);
+}
+ .line:nth-child(14) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(1)::before {
+	 transform: rotateX(-130deg);
+	 content: "7";
+}
+ .line:nth-child(14) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(2)::before {
+	 transform: rotateX(-130deg);
+	 content: "9";
+}
+ .line:nth-child(14) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(3)::before {
+	 transform: rotateX(-130deg);
+	 content: "4";
+}
+ .line:nth-child(14) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(4)::before {
+	 transform: rotateX(-130deg);
+	 content: "3";
+}
+ .line:nth-child(14) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(5)::before {
+	 transform: rotateX(-130deg);
+	 content: "1";
+}
+ .line:nth-child(14) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(6)::before {
+	 transform: rotateX(-130deg);
+	 content: "4";
+}
+ .line:nth-child(14) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(7)::before {
+	 transform: rotateX(-130deg);
+	 content: "3";
+}
+ .line:nth-child(14) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(8)::before {
+	 transform: rotateX(-130deg);
+	 content: "5";
+}
+ .line:nth-child(14) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(9)::before {
+	 transform: rotateX(-130deg);
+	 content: "8";
+}
+ .line:nth-child(14) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(10)::before {
+	 transform: rotateX(-130deg);
+	 content: "8";
+}
+ .line:nth-child(14) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(11)::before {
+	 transform: rotateX(-130deg);
+	 content: "1";
+}
+ .line:nth-child(14) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(14) .number:nth-child(12)::before {
+	 transform: rotateX(-130deg);
+	 content: "3";
+}
+ .line:nth-child(15) {
+	 transform: rotateX(140deg);
+}
+ .line:nth-child(15) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(1)::before {
+	 transform: rotateX(-140deg);
+	 content: "7";
+}
+ .line:nth-child(15) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(2)::before {
+	 transform: rotateX(-140deg);
+	 content: "1";
+}
+ .line:nth-child(15) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(3)::before {
+	 transform: rotateX(-140deg);
+	 content: "8";
+}
+ .line:nth-child(15) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(4)::before {
+	 transform: rotateX(-140deg);
+	 content: "1";
+}
+ .line:nth-child(15) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(5)::before {
+	 transform: rotateX(-140deg);
+	 content: "4";
+}
+ .line:nth-child(15) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(6)::before {
+	 transform: rotateX(-140deg);
+	 content: "8";
+}
+ .line:nth-child(15) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(7)::before {
+	 transform: rotateX(-140deg);
+	 content: "1";
+}
+ .line:nth-child(15) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(8)::before {
+	 transform: rotateX(-140deg);
+	 content: "1";
+}
+ .line:nth-child(15) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(9)::before {
+	 transform: rotateX(-140deg);
+	 content: "3";
+}
+ .line:nth-child(15) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(10)::before {
+	 transform: rotateX(-140deg);
+	 content: "6";
+}
+ .line:nth-child(15) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(11)::before {
+	 transform: rotateX(-140deg);
+	 content: "4";
+}
+ .line:nth-child(15) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(15) .number:nth-child(12)::before {
+	 transform: rotateX(-140deg);
+	 content: "9";
+}
+ .line:nth-child(16) {
+	 transform: rotateX(150deg);
+}
+ .line:nth-child(16) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(1)::before {
+	 transform: rotateX(-150deg);
+	 content: "7";
+}
+ .line:nth-child(16) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(2)::before {
+	 transform: rotateX(-150deg);
+	 content: "5";
+}
+ .line:nth-child(16) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(3)::before {
+	 transform: rotateX(-150deg);
+	 content: "8";
+}
+ .line:nth-child(16) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(4)::before {
+	 transform: rotateX(-150deg);
+	 content: "7";
+}
+ .line:nth-child(16) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(5)::before {
+	 transform: rotateX(-150deg);
+	 content: "6";
+}
+ .line:nth-child(16) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(6)::before {
+	 transform: rotateX(-150deg);
+	 content: "6";
+}
+ .line:nth-child(16) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(7)::before {
+	 transform: rotateX(-150deg);
+	 content: "1";
+}
+ .line:nth-child(16) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(8)::before {
+	 transform: rotateX(-150deg);
+	 content: "2";
+}
+ .line:nth-child(16) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(9)::before {
+	 transform: rotateX(-150deg);
+	 content: "5";
+}
+ .line:nth-child(16) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(10)::before {
+	 transform: rotateX(-150deg);
+	 content: "1";
+}
+ .line:nth-child(16) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(11)::before {
+	 transform: rotateX(-150deg);
+	 content: "1";
+}
+ .line:nth-child(16) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(16) .number:nth-child(12)::before {
+	 transform: rotateX(-150deg);
+	 content: "2";
+}
+ .line:nth-child(17) {
+	 transform: rotateX(160deg);
+}
+ .line:nth-child(17) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(1)::before {
+	 transform: rotateX(-160deg);
+	 content: "8";
+}
+ .line:nth-child(17) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(2)::before {
+	 transform: rotateX(-160deg);
+	 content: "7";
+}
+ .line:nth-child(17) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(3)::before {
+	 transform: rotateX(-160deg);
+	 content: "9";
+}
+ .line:nth-child(17) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(4)::before {
+	 transform: rotateX(-160deg);
+	 content: "5";
+}
+ .line:nth-child(17) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(5)::before {
+	 transform: rotateX(-160deg);
+	 content: "6";
+}
+ .line:nth-child(17) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(6)::before {
+	 transform: rotateX(-160deg);
+	 content: "9";
+}
+ .line:nth-child(17) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(7)::before {
+	 transform: rotateX(-160deg);
+	 content: "1";
+}
+ .line:nth-child(17) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(8)::before {
+	 transform: rotateX(-160deg);
+	 content: "5";
+}
+ .line:nth-child(17) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(9)::before {
+	 transform: rotateX(-160deg);
+	 content: "3";
+}
+ .line:nth-child(17) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(10)::before {
+	 transform: rotateX(-160deg);
+	 content: "9";
+}
+ .line:nth-child(17) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(11)::before {
+	 transform: rotateX(-160deg);
+	 content: "3";
+}
+ .line:nth-child(17) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(17) .number:nth-child(12)::before {
+	 transform: rotateX(-160deg);
+	 content: "6";
+}
+ .line:nth-child(18) {
+	 transform: rotateX(170deg);
+}
+ .line:nth-child(18) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(1)::before {
+	 transform: rotateX(-170deg);
+	 content: "6";
+}
+ .line:nth-child(18) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(2)::before {
+	 transform: rotateX(-170deg);
+	 content: "1";
+}
+ .line:nth-child(18) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(3)::before {
+	 transform: rotateX(-170deg);
+	 content: "9";
+}
+ .line:nth-child(18) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(4)::before {
+	 transform: rotateX(-170deg);
+	 content: "5";
+}
+ .line:nth-child(18) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(5)::before {
+	 transform: rotateX(-170deg);
+	 content: "2";
+}
+ .line:nth-child(18) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(6)::before {
+	 transform: rotateX(-170deg);
+	 content: "2";
+}
+ .line:nth-child(18) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(7)::before {
+	 transform: rotateX(-170deg);
+	 content: "1";
+}
+ .line:nth-child(18) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(8)::before {
+	 transform: rotateX(-170deg);
+	 content: "7";
+}
+ .line:nth-child(18) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(9)::before {
+	 transform: rotateX(-170deg);
+	 content: "1";
+}
+ .line:nth-child(18) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(10)::before {
+	 transform: rotateX(-170deg);
+	 content: "7";
+}
+ .line:nth-child(18) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(11)::before {
+	 transform: rotateX(-170deg);
+	 content: "5";
+}
+ .line:nth-child(18) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(18) .number:nth-child(12)::before {
+	 transform: rotateX(-170deg);
+	 content: "9";
+}
+ .line:nth-child(19) {
+	 transform: rotateX(180deg);
+}
+ .line:nth-child(19) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(1)::before {
+	 transform: rotateX(-180deg);
+	 content: "3";
+}
+ .line:nth-child(19) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(2)::before {
+	 transform: rotateX(-180deg);
+	 content: "8";
+}
+ .line:nth-child(19) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(3)::before {
+	 transform: rotateX(-180deg);
+	 content: "7";
+}
+ .line:nth-child(19) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(4)::before {
+	 transform: rotateX(-180deg);
+	 content: "8";
+}
+ .line:nth-child(19) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(5)::before {
+	 transform: rotateX(-180deg);
+	 content: "8";
+}
+ .line:nth-child(19) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(6)::before {
+	 transform: rotateX(-180deg);
+	 content: "9";
+}
+ .line:nth-child(19) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(7)::before {
+	 transform: rotateX(-180deg);
+	 content: "5";
+}
+ .line:nth-child(19) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(8)::before {
+	 transform: rotateX(-180deg);
+	 content: "8";
+}
+ .line:nth-child(19) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(9)::before {
+	 transform: rotateX(-180deg);
+	 content: "5";
+}
+ .line:nth-child(19) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(10)::before {
+	 transform: rotateX(-180deg);
+	 content: "9";
+}
+ .line:nth-child(19) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(11)::before {
+	 transform: rotateX(-180deg);
+	 content: "6";
+}
+ .line:nth-child(19) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(19) .number:nth-child(12)::before {
+	 transform: rotateX(-180deg);
+	 content: "9";
+}
+ .line:nth-child(20) {
+	 transform: rotateX(190deg);
+}
+ .line:nth-child(20) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(1)::before {
+	 transform: rotateX(-190deg);
+	 content: "6";
+}
+ .line:nth-child(20) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(2)::before {
+	 transform: rotateX(-190deg);
+	 content: "4";
+}
+ .line:nth-child(20) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(3)::before {
+	 transform: rotateX(-190deg);
+	 content: "6";
+}
+ .line:nth-child(20) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(4)::before {
+	 transform: rotateX(-190deg);
+	 content: "8";
+}
+ .line:nth-child(20) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(5)::before {
+	 transform: rotateX(-190deg);
+	 content: "1";
+}
+ .line:nth-child(20) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(6)::before {
+	 transform: rotateX(-190deg);
+	 content: "7";
+}
+ .line:nth-child(20) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(7)::before {
+	 transform: rotateX(-190deg);
+	 content: "2";
+}
+ .line:nth-child(20) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(8)::before {
+	 transform: rotateX(-190deg);
+	 content: "7";
+}
+ .line:nth-child(20) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(9)::before {
+	 transform: rotateX(-190deg);
+	 content: "7";
+}
+ .line:nth-child(20) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(10)::before {
+	 transform: rotateX(-190deg);
+	 content: "8";
+}
+ .line:nth-child(20) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(11)::before {
+	 transform: rotateX(-190deg);
+	 content: "7";
+}
+ .line:nth-child(20) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(20) .number:nth-child(12)::before {
+	 transform: rotateX(-190deg);
+	 content: "9";
+}
+ .line:nth-child(21) {
+	 transform: rotateX(200deg);
+}
+ .line:nth-child(21) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(1)::before {
+	 transform: rotateX(-200deg);
+	 content: "3";
+}
+ .line:nth-child(21) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(2)::before {
+	 transform: rotateX(-200deg);
+	 content: "4";
+}
+ .line:nth-child(21) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(3)::before {
+	 transform: rotateX(-200deg);
+	 content: "2";
+}
+ .line:nth-child(21) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(4)::before {
+	 transform: rotateX(-200deg);
+	 content: "2";
+}
+ .line:nth-child(21) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(5)::before {
+	 transform: rotateX(-200deg);
+	 content: "4";
+}
+ .line:nth-child(21) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(6)::before {
+	 transform: rotateX(-200deg);
+	 content: "8";
+}
+ .line:nth-child(21) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(7)::before {
+	 transform: rotateX(-200deg);
+	 content: "1";
+}
+ .line:nth-child(21) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(8)::before {
+	 transform: rotateX(-200deg);
+	 content: "2";
+}
+ .line:nth-child(21) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(9)::before {
+	 transform: rotateX(-200deg);
+	 content: "6";
+}
+ .line:nth-child(21) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(10)::before {
+	 transform: rotateX(-200deg);
+	 content: "8";
+}
+ .line:nth-child(21) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(11)::before {
+	 transform: rotateX(-200deg);
+	 content: "6";
+}
+ .line:nth-child(21) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(21) .number:nth-child(12)::before {
+	 transform: rotateX(-200deg);
+	 content: "8";
+}
+ .line:nth-child(22) {
+	 transform: rotateX(210deg);
+}
+ .line:nth-child(22) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(1)::before {
+	 transform: rotateX(-210deg);
+	 content: "5";
+}
+ .line:nth-child(22) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(2)::before {
+	 transform: rotateX(-210deg);
+	 content: "3";
+}
+ .line:nth-child(22) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(3)::before {
+	 transform: rotateX(-210deg);
+	 content: "3";
+}
+ .line:nth-child(22) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(4)::before {
+	 transform: rotateX(-210deg);
+	 content: "4";
+}
+ .line:nth-child(22) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(5)::before {
+	 transform: rotateX(-210deg);
+	 content: "4";
+}
+ .line:nth-child(22) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(6)::before {
+	 transform: rotateX(-210deg);
+	 content: "1";
+}
+ .line:nth-child(22) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(7)::before {
+	 transform: rotateX(-210deg);
+	 content: "2";
+}
+ .line:nth-child(22) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(8)::before {
+	 transform: rotateX(-210deg);
+	 content: "1";
+}
+ .line:nth-child(22) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(9)::before {
+	 transform: rotateX(-210deg);
+	 content: "6";
+}
+ .line:nth-child(22) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(10)::before {
+	 transform: rotateX(-210deg);
+	 content: "3";
+}
+ .line:nth-child(22) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(11)::before {
+	 transform: rotateX(-210deg);
+	 content: "4";
+}
+ .line:nth-child(22) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(22) .number:nth-child(12)::before {
+	 transform: rotateX(-210deg);
+	 content: "9";
+}
+ .line:nth-child(23) {
+	 transform: rotateX(220deg);
+}
+ .line:nth-child(23) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(1)::before {
+	 transform: rotateX(-220deg);
+	 content: "3";
+}
+ .line:nth-child(23) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(2)::before {
+	 transform: rotateX(-220deg);
+	 content: "4";
+}
+ .line:nth-child(23) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(3)::before {
+	 transform: rotateX(-220deg);
+	 content: "8";
+}
+ .line:nth-child(23) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(4)::before {
+	 transform: rotateX(-220deg);
+	 content: "4";
+}
+ .line:nth-child(23) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(5)::before {
+	 transform: rotateX(-220deg);
+	 content: "4";
+}
+ .line:nth-child(23) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(6)::before {
+	 transform: rotateX(-220deg);
+	 content: "9";
+}
+ .line:nth-child(23) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(7)::before {
+	 transform: rotateX(-220deg);
+	 content: "6";
+}
+ .line:nth-child(23) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(8)::before {
+	 transform: rotateX(-220deg);
+	 content: "3";
+}
+ .line:nth-child(23) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(9)::before {
+	 transform: rotateX(-220deg);
+	 content: "8";
+}
+ .line:nth-child(23) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(10)::before {
+	 transform: rotateX(-220deg);
+	 content: "3";
+}
+ .line:nth-child(23) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(11)::before {
+	 transform: rotateX(-220deg);
+	 content: "4";
+}
+ .line:nth-child(23) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(23) .number:nth-child(12)::before {
+	 transform: rotateX(-220deg);
+	 content: "2";
+}
+ .line:nth-child(24) {
+	 transform: rotateX(230deg);
+}
+ .line:nth-child(24) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(1)::before {
+	 transform: rotateX(-230deg);
+	 content: "5";
+}
+ .line:nth-child(24) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(2)::before {
+	 transform: rotateX(-230deg);
+	 content: "4";
+}
+ .line:nth-child(24) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(3)::before {
+	 transform: rotateX(-230deg);
+	 content: "2";
+}
+ .line:nth-child(24) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(4)::before {
+	 transform: rotateX(-230deg);
+	 content: "1";
+}
+ .line:nth-child(24) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(5)::before {
+	 transform: rotateX(-230deg);
+	 content: "3";
+}
+ .line:nth-child(24) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(6)::before {
+	 transform: rotateX(-230deg);
+	 content: "4";
+}
+ .line:nth-child(24) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(7)::before {
+	 transform: rotateX(-230deg);
+	 content: "7";
+}
+ .line:nth-child(24) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(8)::before {
+	 transform: rotateX(-230deg);
+	 content: "4";
+}
+ .line:nth-child(24) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(9)::before {
+	 transform: rotateX(-230deg);
+	 content: "3";
+}
+ .line:nth-child(24) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(10)::before {
+	 transform: rotateX(-230deg);
+	 content: "6";
+}
+ .line:nth-child(24) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(11)::before {
+	 transform: rotateX(-230deg);
+	 content: "4";
+}
+ .line:nth-child(24) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(24) .number:nth-child(12)::before {
+	 transform: rotateX(-230deg);
+	 content: "3";
+}
+ .line:nth-child(25) {
+	 transform: rotateX(240deg);
+}
+ .line:nth-child(25) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(1)::before {
+	 transform: rotateX(-240deg);
+	 content: "6";
+}
+ .line:nth-child(25) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(2)::before {
+	 transform: rotateX(-240deg);
+	 content: "9";
+}
+ .line:nth-child(25) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(3)::before {
+	 transform: rotateX(-240deg);
+	 content: "7";
+}
+ .line:nth-child(25) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(4)::before {
+	 transform: rotateX(-240deg);
+	 content: "1";
+}
+ .line:nth-child(25) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(5)::before {
+	 transform: rotateX(-240deg);
+	 content: "5";
+}
+ .line:nth-child(25) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(6)::before {
+	 transform: rotateX(-240deg);
+	 content: "4";
+}
+ .line:nth-child(25) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(7)::before {
+	 transform: rotateX(-240deg);
+	 content: "5";
+}
+ .line:nth-child(25) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(8)::before {
+	 transform: rotateX(-240deg);
+	 content: "9";
+}
+ .line:nth-child(25) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(9)::before {
+	 transform: rotateX(-240deg);
+	 content: "8";
+}
+ .line:nth-child(25) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(10)::before {
+	 transform: rotateX(-240deg);
+	 content: "4";
+}
+ .line:nth-child(25) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(11)::before {
+	 transform: rotateX(-240deg);
+	 content: "2";
+}
+ .line:nth-child(25) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(25) .number:nth-child(12)::before {
+	 transform: rotateX(-240deg);
+	 content: "9";
+}
+ .line:nth-child(26) {
+	 transform: rotateX(250deg);
+}
+ .line:nth-child(26) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(1)::before {
+	 transform: rotateX(-250deg);
+	 content: "7";
+}
+ .line:nth-child(26) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(2)::before {
+	 transform: rotateX(-250deg);
+	 content: "4";
+}
+ .line:nth-child(26) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(3)::before {
+	 transform: rotateX(-250deg);
+	 content: "3";
+}
+ .line:nth-child(26) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(4)::before {
+	 transform: rotateX(-250deg);
+	 content: "8";
+}
+ .line:nth-child(26) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(5)::before {
+	 transform: rotateX(-250deg);
+	 content: "6";
+}
+ .line:nth-child(26) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(6)::before {
+	 transform: rotateX(-250deg);
+	 content: "9";
+}
+ .line:nth-child(26) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(7)::before {
+	 transform: rotateX(-250deg);
+	 content: "9";
+}
+ .line:nth-child(26) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(8)::before {
+	 transform: rotateX(-250deg);
+	 content: "4";
+}
+ .line:nth-child(26) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(9)::before {
+	 transform: rotateX(-250deg);
+	 content: "1";
+}
+ .line:nth-child(26) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(10)::before {
+	 transform: rotateX(-250deg);
+	 content: "8";
+}
+ .line:nth-child(26) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(11)::before {
+	 transform: rotateX(-250deg);
+	 content: "3";
+}
+ .line:nth-child(26) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(26) .number:nth-child(12)::before {
+	 transform: rotateX(-250deg);
+	 content: "8";
+}
+ .line:nth-child(27) {
+	 transform: rotateX(260deg);
+}
+ .line:nth-child(27) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(1)::before {
+	 transform: rotateX(-260deg);
+	 content: "7";
+}
+ .line:nth-child(27) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(2)::before {
+	 transform: rotateX(-260deg);
+	 content: "1";
+}
+ .line:nth-child(27) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(3)::before {
+	 transform: rotateX(-260deg);
+	 content: "5";
+}
+ .line:nth-child(27) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(4)::before {
+	 transform: rotateX(-260deg);
+	 content: "7";
+}
+ .line:nth-child(27) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(5)::before {
+	 transform: rotateX(-260deg);
+	 content: "8";
+}
+ .line:nth-child(27) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(6)::before {
+	 transform: rotateX(-260deg);
+	 content: "6";
+}
+ .line:nth-child(27) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(7)::before {
+	 transform: rotateX(-260deg);
+	 content: "7";
+}
+ .line:nth-child(27) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(8)::before {
+	 transform: rotateX(-260deg);
+	 content: "7";
+}
+ .line:nth-child(27) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(9)::before {
+	 transform: rotateX(-260deg);
+	 content: "1";
+}
+ .line:nth-child(27) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(10)::before {
+	 transform: rotateX(-260deg);
+	 content: "3";
+}
+ .line:nth-child(27) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(11)::before {
+	 transform: rotateX(-260deg);
+	 content: "2";
+}
+ .line:nth-child(27) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(27) .number:nth-child(12)::before {
+	 transform: rotateX(-260deg);
+	 content: "8";
+}
+ .line:nth-child(28) {
+	 transform: rotateX(270deg);
+}
+ .line:nth-child(28) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(1)::before {
+	 transform: rotateX(-270deg);
+	 content: "3";
+}
+ .line:nth-child(28) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(2)::before {
+	 transform: rotateX(-270deg);
+	 content: "2";
+}
+ .line:nth-child(28) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(3)::before {
+	 transform: rotateX(-270deg);
+	 content: "4";
+}
+ .line:nth-child(28) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(4)::before {
+	 transform: rotateX(-270deg);
+	 content: "8";
+}
+ .line:nth-child(28) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(5)::before {
+	 transform: rotateX(-270deg);
+	 content: "8";
+}
+ .line:nth-child(28) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(6)::before {
+	 transform: rotateX(-270deg);
+	 content: "6";
+}
+ .line:nth-child(28) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(7)::before {
+	 transform: rotateX(-270deg);
+	 content: "2";
+}
+ .line:nth-child(28) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(8)::before {
+	 transform: rotateX(-270deg);
+	 content: "8";
+}
+ .line:nth-child(28) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(9)::before {
+	 transform: rotateX(-270deg);
+	 content: "8";
+}
+ .line:nth-child(28) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(10)::before {
+	 transform: rotateX(-270deg);
+	 content: "2";
+}
+ .line:nth-child(28) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(11)::before {
+	 transform: rotateX(-270deg);
+	 content: "5";
+}
+ .line:nth-child(28) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(28) .number:nth-child(12)::before {
+	 transform: rotateX(-270deg);
+	 content: "6";
+}
+ .line:nth-child(29) {
+	 transform: rotateX(280deg);
+}
+ .line:nth-child(29) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(1)::before {
+	 transform: rotateX(-280deg);
+	 content: "1";
+}
+ .line:nth-child(29) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(2)::before {
+	 transform: rotateX(-280deg);
+	 content: "3";
+}
+ .line:nth-child(29) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(3)::before {
+	 transform: rotateX(-280deg);
+	 content: "3";
+}
+ .line:nth-child(29) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(4)::before {
+	 transform: rotateX(-280deg);
+	 content: "6";
+}
+ .line:nth-child(29) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(5)::before {
+	 transform: rotateX(-280deg);
+	 content: "5";
+}
+ .line:nth-child(29) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(6)::before {
+	 transform: rotateX(-280deg);
+	 content: "8";
+}
+ .line:nth-child(29) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(7)::before {
+	 transform: rotateX(-280deg);
+	 content: "2";
+}
+ .line:nth-child(29) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(8)::before {
+	 transform: rotateX(-280deg);
+	 content: "3";
+}
+ .line:nth-child(29) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(9)::before {
+	 transform: rotateX(-280deg);
+	 content: "7";
+}
+ .line:nth-child(29) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(10)::before {
+	 transform: rotateX(-280deg);
+	 content: "3";
+}
+ .line:nth-child(29) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(11)::before {
+	 transform: rotateX(-280deg);
+	 content: "1";
+}
+ .line:nth-child(29) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(29) .number:nth-child(12)::before {
+	 transform: rotateX(-280deg);
+	 content: "1";
+}
+ .line:nth-child(30) {
+	 transform: rotateX(290deg);
+}
+ .line:nth-child(30) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(1)::before {
+	 transform: rotateX(-290deg);
+	 content: "7";
+}
+ .line:nth-child(30) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(2)::before {
+	 transform: rotateX(-290deg);
+	 content: "5";
+}
+ .line:nth-child(30) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(3)::before {
+	 transform: rotateX(-290deg);
+	 content: "8";
+}
+ .line:nth-child(30) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(4)::before {
+	 transform: rotateX(-290deg);
+	 content: "7";
+}
+ .line:nth-child(30) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(5)::before {
+	 transform: rotateX(-290deg);
+	 content: "4";
+}
+ .line:nth-child(30) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(6)::before {
+	 transform: rotateX(-290deg);
+	 content: "8";
+}
+ .line:nth-child(30) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(7)::before {
+	 transform: rotateX(-290deg);
+	 content: "1";
+}
+ .line:nth-child(30) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(8)::before {
+	 transform: rotateX(-290deg);
+	 content: "4";
+}
+ .line:nth-child(30) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(9)::before {
+	 transform: rotateX(-290deg);
+	 content: "4";
+}
+ .line:nth-child(30) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(10)::before {
+	 transform: rotateX(-290deg);
+	 content: "9";
+}
+ .line:nth-child(30) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(11)::before {
+	 transform: rotateX(-290deg);
+	 content: "4";
+}
+ .line:nth-child(30) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(30) .number:nth-child(12)::before {
+	 transform: rotateX(-290deg);
+	 content: "3";
+}
+ .line:nth-child(31) {
+	 transform: rotateX(300deg);
+}
+ .line:nth-child(31) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(1)::before {
+	 transform: rotateX(-300deg);
+	 content: "6";
+}
+ .line:nth-child(31) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(2)::before {
+	 transform: rotateX(-300deg);
+	 content: "4";
+}
+ .line:nth-child(31) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(3)::before {
+	 transform: rotateX(-300deg);
+	 content: "9";
+}
+ .line:nth-child(31) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(4)::before {
+	 transform: rotateX(-300deg);
+	 content: "2";
+}
+ .line:nth-child(31) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(5)::before {
+	 transform: rotateX(-300deg);
+	 content: "5";
+}
+ .line:nth-child(31) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(6)::before {
+	 transform: rotateX(-300deg);
+	 content: "8";
+}
+ .line:nth-child(31) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(7)::before {
+	 transform: rotateX(-300deg);
+	 content: "1";
+}
+ .line:nth-child(31) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(8)::before {
+	 transform: rotateX(-300deg);
+	 content: "8";
+}
+ .line:nth-child(31) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(9)::before {
+	 transform: rotateX(-300deg);
+	 content: "4";
+}
+ .line:nth-child(31) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(10)::before {
+	 transform: rotateX(-300deg);
+	 content: "7";
+}
+ .line:nth-child(31) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(11)::before {
+	 transform: rotateX(-300deg);
+	 content: "1";
+}
+ .line:nth-child(31) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(31) .number:nth-child(12)::before {
+	 transform: rotateX(-300deg);
+	 content: "5";
+}
+ .line:nth-child(32) {
+	 transform: rotateX(310deg);
+}
+ .line:nth-child(32) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(1)::before {
+	 transform: rotateX(-310deg);
+	 content: "1";
+}
+ .line:nth-child(32) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(2)::before {
+	 transform: rotateX(-310deg);
+	 content: "1";
+}
+ .line:nth-child(32) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(3)::before {
+	 transform: rotateX(-310deg);
+	 content: "3";
+}
+ .line:nth-child(32) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(4)::before {
+	 transform: rotateX(-310deg);
+	 content: "9";
+}
+ .line:nth-child(32) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(5)::before {
+	 transform: rotateX(-310deg);
+	 content: "4";
+}
+ .line:nth-child(32) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(6)::before {
+	 transform: rotateX(-310deg);
+	 content: "6";
+}
+ .line:nth-child(32) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(7)::before {
+	 transform: rotateX(-310deg);
+	 content: "1";
+}
+ .line:nth-child(32) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(8)::before {
+	 transform: rotateX(-310deg);
+	 content: "8";
+}
+ .line:nth-child(32) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(9)::before {
+	 transform: rotateX(-310deg);
+	 content: "9";
+}
+ .line:nth-child(32) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(10)::before {
+	 transform: rotateX(-310deg);
+	 content: "4";
+}
+ .line:nth-child(32) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(11)::before {
+	 transform: rotateX(-310deg);
+	 content: "5";
+}
+ .line:nth-child(32) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(32) .number:nth-child(12)::before {
+	 transform: rotateX(-310deg);
+	 content: "5";
+}
+ .line:nth-child(33) {
+	 transform: rotateX(320deg);
+}
+ .line:nth-child(33) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(1)::before {
+	 transform: rotateX(-320deg);
+	 content: "6";
+}
+ .line:nth-child(33) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(2)::before {
+	 transform: rotateX(-320deg);
+	 content: "9";
+}
+ .line:nth-child(33) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(3)::before {
+	 transform: rotateX(-320deg);
+	 content: "8";
+}
+ .line:nth-child(33) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(4)::before {
+	 transform: rotateX(-320deg);
+	 content: "5";
+}
+ .line:nth-child(33) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(5)::before {
+	 transform: rotateX(-320deg);
+	 content: "2";
+}
+ .line:nth-child(33) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(6)::before {
+	 transform: rotateX(-320deg);
+	 content: "2";
+}
+ .line:nth-child(33) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(7)::before {
+	 transform: rotateX(-320deg);
+	 content: "7";
+}
+ .line:nth-child(33) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(8)::before {
+	 transform: rotateX(-320deg);
+	 content: "1";
+}
+ .line:nth-child(33) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(9)::before {
+	 transform: rotateX(-320deg);
+	 content: "1";
+}
+ .line:nth-child(33) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(10)::before {
+	 transform: rotateX(-320deg);
+	 content: "5";
+}
+ .line:nth-child(33) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(11)::before {
+	 transform: rotateX(-320deg);
+	 content: "7";
+}
+ .line:nth-child(33) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(33) .number:nth-child(12)::before {
+	 transform: rotateX(-320deg);
+	 content: "3";
+}
+ .line:nth-child(34) {
+	 transform: rotateX(330deg);
+}
+ .line:nth-child(34) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(1)::before {
+	 transform: rotateX(-330deg);
+	 content: "3";
+}
+ .line:nth-child(34) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(2)::before {
+	 transform: rotateX(-330deg);
+	 content: "8";
+}
+ .line:nth-child(34) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(3)::before {
+	 transform: rotateX(-330deg);
+	 content: "1";
+}
+ .line:nth-child(34) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(4)::before {
+	 transform: rotateX(-330deg);
+	 content: "7";
+}
+ .line:nth-child(34) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(5)::before {
+	 transform: rotateX(-330deg);
+	 content: "5";
+}
+ .line:nth-child(34) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(6)::before {
+	 transform: rotateX(-330deg);
+	 content: "6";
+}
+ .line:nth-child(34) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(7)::before {
+	 transform: rotateX(-330deg);
+	 content: "6";
+}
+ .line:nth-child(34) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(8)::before {
+	 transform: rotateX(-330deg);
+	 content: "3";
+}
+ .line:nth-child(34) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(9)::before {
+	 transform: rotateX(-330deg);
+	 content: "1";
+}
+ .line:nth-child(34) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(10)::before {
+	 transform: rotateX(-330deg);
+	 content: "7";
+}
+ .line:nth-child(34) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(11)::before {
+	 transform: rotateX(-330deg);
+	 content: "9";
+}
+ .line:nth-child(34) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(34) .number:nth-child(12)::before {
+	 transform: rotateX(-330deg);
+	 content: "4";
+}
+ .line:nth-child(35) {
+	 transform: rotateX(340deg);
+}
+ .line:nth-child(35) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(1)::before {
+	 transform: rotateX(-340deg);
+	 content: "3";
+}
+ .line:nth-child(35) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(2)::before {
+	 transform: rotateX(-340deg);
+	 content: "4";
+}
+ .line:nth-child(35) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(3)::before {
+	 transform: rotateX(-340deg);
+	 content: "6";
+}
+ .line:nth-child(35) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(4)::before {
+	 transform: rotateX(-340deg);
+	 content: "4";
+}
+ .line:nth-child(35) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(5)::before {
+	 transform: rotateX(-340deg);
+	 content: "5";
+}
+ .line:nth-child(35) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(6)::before {
+	 transform: rotateX(-340deg);
+	 content: "2";
+}
+ .line:nth-child(35) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(7)::before {
+	 transform: rotateX(-340deg);
+	 content: "3";
+}
+ .line:nth-child(35) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(8)::before {
+	 transform: rotateX(-340deg);
+	 content: "5";
+}
+ .line:nth-child(35) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(9)::before {
+	 transform: rotateX(-340deg);
+	 content: "7";
+}
+ .line:nth-child(35) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(10)::before {
+	 transform: rotateX(-340deg);
+	 content: "4";
+}
+ .line:nth-child(35) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(11)::before {
+	 transform: rotateX(-340deg);
+	 content: "9";
+}
+ .line:nth-child(35) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(35) .number:nth-child(12)::before {
+	 transform: rotateX(-340deg);
+	 content: "7";
+}
+ .line:nth-child(36) {
+	 transform: rotateX(350deg);
+}
+ .line:nth-child(36) .number:nth-child(1) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(1)::before {
+	 transform: rotateX(-350deg);
+	 content: "2";
+}
+ .line:nth-child(36) .number:nth-child(2) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(2)::before {
+	 transform: rotateX(-350deg);
+	 content: "6";
+}
+ .line:nth-child(36) .number:nth-child(3) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(3)::before {
+	 transform: rotateX(-350deg);
+	 content: "5";
+}
+ .line:nth-child(36) .number:nth-child(4) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(4)::before {
+	 transform: rotateX(-350deg);
+	 content: "9";
+}
+ .line:nth-child(36) .number:nth-child(5) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(5)::before {
+	 transform: rotateX(-350deg);
+	 content: "9";
+}
+ .line:nth-child(36) .number:nth-child(6) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(6)::before {
+	 transform: rotateX(-350deg);
+	 content: "5";
+}
+ .line:nth-child(36) .number:nth-child(7) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(7)::before {
+	 transform: rotateX(-350deg);
+	 content: "2";
+}
+ .line:nth-child(36) .number:nth-child(8) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(8)::before {
+	 transform: rotateX(-350deg);
+	 content: "1";
+}
+ .line:nth-child(36) .number:nth-child(9) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(9)::before {
+	 transform: rotateX(-350deg);
+	 content: "5";
+}
+ .line:nth-child(36) .number:nth-child(10) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(10)::before {
+	 transform: rotateX(-350deg);
+	 content: "1";
+}
+ .line:nth-child(36) .number:nth-child(11) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(11)::before {
+	 transform: rotateX(-350deg);
+	 content: "1";
+}
+ .line:nth-child(36) .number:nth-child(12) {
+	 animation: reRotate 10s linear infinite;
+}
+ .line:nth-child(36) .number:nth-child(12)::before {
+	 transform: rotateX(-350deg);
+	 content: "1";
+}
+ .container {
+	 transform: rotateX(0);
+	 animation: conRotate 10s linear infinite;
+}
+ @keyframes conRotate {
+	 to {
+		 transform: rotateX(360deg);
+	}
+}
+ @keyframes reRotate {
+	 to {
+		 transform: rotateX(-360deg);
+	}
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+        <div class="line">
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+          <div class="number"></div>
+        </div>
+      </div>
+</body>
+</html>
